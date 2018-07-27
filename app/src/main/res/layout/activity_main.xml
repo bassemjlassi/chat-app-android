@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.formation.chatapplication.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginBottom="60dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/is_typing_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:text="is typing ..."
+
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/message_edit_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+
+        android:id="@+id/message_edit_text"
+        style="@style/AppSolidRoundedEditText"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+
+
+        android:layout_marginRight="5dp"
+        android:paddingRight="43dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/send_image_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:layout_alignTop="@+id/message_edit_text"
+
+        android:padding="10dp"
+        android:src="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="@id/message_edit_text"
+        app:layout_constraintRight_toRightOf="@+id/message_edit_text"
+
+
+        app:layout_constraintTop_toTopOf="@id/message_edit_text"
+
+        tools:layout_editor_absoluteX="356dp" />
+
+</android.support.constraint.ConstraintLayout>
