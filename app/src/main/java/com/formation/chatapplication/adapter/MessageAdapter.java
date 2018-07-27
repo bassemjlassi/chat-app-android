@@ -32,7 +32,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
     @NonNull
     @Override
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       // View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_message, parent, false);
+       // View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_message_receive, parent, false);
        // return new MessageViewHolder(itemView);
 
 
@@ -42,7 +42,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
             return new MessageViewHolder(itemView);
         } else if (viewType == VIEW_TYPE_MESSAGE_RECEIVED) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.row_message, parent, false);
+                    .inflate(R.layout.item_message_receive, parent, false);
             return new MessageViewHolder(itemView);
         }
         return null;
