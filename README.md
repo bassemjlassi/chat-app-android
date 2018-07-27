@@ -6,3 +6,5 @@ This app isn't meant to be used for commercial purposes,it's just a demonstratio
 
 The following are the gif(s) of how the app works.
 
+![Alt Text](http://self-created-bag.000webhostapp.com/gif/demo.gif)
+
