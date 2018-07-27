@@ -50,8 +50,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:inputType="textMultiLine"
 
         android:layout_marginBottom="5dp"
+        android:maxLines="3"
         />
 
     <ImageView

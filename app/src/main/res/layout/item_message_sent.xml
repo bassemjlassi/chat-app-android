@@ -16,7 +16,8 @@
         android:maxWidth="240dp"
         android:padding="8dp"
         android:text="hello, hello!"
-
+        android:autoLink="web"
+        android:textColorLink="@color/white"
         android:textColor="#ffffff"
         android:layout_alignParentRight="true"
          />
