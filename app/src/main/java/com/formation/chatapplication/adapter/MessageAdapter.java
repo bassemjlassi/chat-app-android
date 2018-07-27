@@ -52,15 +52,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
 
-      MessageUser messageUser = mList.get(position);
-//
-//        ((MessageViewHolder) holder).username.setText(messageUser.getUsername().toString());
-//        ((MessageViewHolder) holder).message.setText(messageUser.getMessage().toString());
+          MessageUser messageUser = mList.get(position);
 
 
         switch (holder.getItemViewType()) {
             case VIEW_TYPE_MESSAGE_SENT:
-             //   ((MessageViewHolder) holder).username.setText(messageUser.getUsername().toString());
                 ((MessageViewHolder) holder).message.setText(messageUser.getMessage().toString());
                 break;
             case VIEW_TYPE_MESSAGE_RECEIVED:

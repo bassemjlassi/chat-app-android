@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:text="is typing ..."
+
 
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/message_edit_text"
@@ -41,6 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
 
+        android:hint="@string/write_message"
+
 
         android:layout_marginRight="5dp"
         android:paddingRight="43dp"
@@ -49,6 +51,7 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
+        android:layout_marginBottom="5dp"
         />
 
     <ImageView

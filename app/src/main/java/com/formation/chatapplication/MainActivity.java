@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
         mSocket = ChatApplication.getInstance().getSocket();
 
-        //mSocket.on(Socket.EVENT_CONNECT,onConnect);
 
 
         mSocket.on("new message", onNewMessage);
@@ -80,23 +79,25 @@ public class MainActivity extends AppCompatActivity {
         sendImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!TextUtils.isEmpty(messageEditText.getText()))
+                if(!TextUtils.isEmpty(messageEditText.getText().toString().trim()))
                 {
-                    mSocket.emit("new message", messageEditText.getText().toString());
+                    mSocket.emit("new message", messageEditText.getText().toString().trim());
+
+
+                    MessageUser messageUser = new MessageUser();
+                    messageUser.setMessage(messageEditText.getText().toString().trim());
+
+                    messageEditText.setText("");
+                    messageUser.setUsername("Bassem");
+
+                    getCurrentAdapter().add(messageUser);
+                    scrollToBottom();
+                    mSocket.emit("stop typing");
                 }
 
 
 
 
-                MessageUser messageUser = new MessageUser();
-                messageUser.setMessage(messageEditText.getText().toString());
-
-                messageEditText.setText("");
-                messageUser.setUsername("Bassem");
-
-                getCurrentAdapter().add(messageUser);
-                scrollToBottom();
-                mSocket.emit("stop typing");
             }
         });
 
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                    Log.d("istyping",username);
 
-                    isTypingTextView.setText(username + " est en train d'écrire");
+                    isTypingTextView.setText(username + " " + getResources().getString(R.string.is_typing));
                     isTypingTextView.setVisibility(View.VISIBLE);
                 }
             });
@@ -166,23 +167,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-//    private Emitter.Listener onConnect = new Emitter.Listener() {
-//        @Override
-//        public void call(Object... args) {
-//            MainActivity.this.runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    if(!isConnected) {
-//
-//                            mSocket.emit("add user", "bassem");
-//                        Toast.makeText(MainActivity.this.getApplicationContext(),
-//                                "connected", Toast.LENGTH_LONG).show();
-//                        isConnected = true;
-//                    }
-//                }
-//            });
-//        }
-//    };
 
     private Emitter.Listener onNewMessage = new Emitter.Listener() {
         @Override
